@@ -157,3 +157,19 @@ app.get('/', (req, res) => {
   res.send({ message: 'Hello API' });
 });
 ```
+
+Create a folder called "packages"
+Create a folder called "middleware" inside "packages" folder
+Create a folder called "error-handler" inside "packages" folder
+Create a file called "error-middleware.ts" file inside "error-handler" folder
+
+We have to create another file for Error Handling inside "error-handler" called "index.ts"
+
+In auth-service -> tsconfig.app.json
+Change rootDir as "../.."
+"include": [
+"../../packages/**/**.ts"
+]
+
+In auth-service -> main.ts
+app.use(errorMiddleware);
